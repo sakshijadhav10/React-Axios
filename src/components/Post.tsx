@@ -1,6 +1,7 @@
 import React from 'react'
 import  { useEffect, useState } from 'react'
 import { deletePost, getPost } from '../api/PostApi'
+import Form from './Form'
 // import { getPost } from './api/PostApi'
 
 const Post = () => {
@@ -16,7 +17,7 @@ const Post = () => {
           getPostData()
         },[])
 
-    const handleDeleteButton=async(id)=>{
+    const handleDeleteButton=async(id: number)=>{
        try{
         const res=await deletePost(id);
        console.log(res);
@@ -37,7 +38,7 @@ const Post = () => {
   return (
     <>
     
-
+    <Form data={myData} setData={setMyData}/>
     
        
          <ol>
